@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    canvas{
+        border: 1px solid black;
+    }
+</style>
+<body>
+    <canvas id="mycanvas" width="800px" height="300px"></canvas>
+</body>
+<script>
+    window.addEventListener("load", function(){
+        var mycanvas = document.getElementById("mycanvas");
+        var img = new Image();
+        img.src="images/01.png";
+        var ctx=mycanvas.getContext("2d");
+        ctx.arc(150,150,80,0,2*Math.PI);
+        ctx.moveTo(200,150);
+        ctx.arc(150,150,50,0,Math.PI);
+        ctx.moveTo(140,130);
+        ctx.arc(130,130,10,0,2*Math.PI);
+        ctx.moveTo(180,130);
+        ctx.arc(170,130,10,0,2*Math.PI);
+        ctx.stroke();
+        ctx.beginPath();
+        var text = "世界级不黑也不白，而是一道精致的灰！";
+        ctx.font ="40px bold"
+        ctx.strokeStyle ="black";
+        ctx.strokeText(text,50,50);
+        ctx.beginPath();
+        img.onload = function(){
+            ctx.drawImage(img,50,50,70,90);
+        }
+        
+    })
+</script>
+</html>

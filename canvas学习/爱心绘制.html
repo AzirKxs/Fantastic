@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color:#ff6972;
+    }
+    div p{
+        color: white;
+        font-weight: bold;
+        font-size: 40px;
+        display: inline-block;
+        letter-spacing: 30px;
+        text-align: center;
+    }
+    p{
+        animation: text 2s linear;
+    }
+    @keyframes text{
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+</style>
+<body>
+    <canvas id="canvas" width="1000" height="600"></canvas>
+    <div>
+        <p>最美的♥送给最美的你</p>
+    </div>
+</body>
+<script>
+    window.addEventListener("load",function(){
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext("2d");
+        var radian_cal = 0;//初始弧度
+        var radian_add = Math.PI / 40;//弧度增量
+        var x,y;
+        ctx.width =1000;
+        ctx.height =600;
+        var img=new Image();
+        img.src="images/01.png";
+        ctx.beginPath();
+        ctx.translate(500,200);//设置绘图原点
+        //设置样式
+        ctx.shadowBlur=5;
+        ctx.shadowColor="#eb3b5a";
+        ctx.strokeStyle ="#eb3b5a";
+        ctx.moveTo(calX(radian_cal),calY(radian_cal));
+        //绘图
+        function draw(){
+            if(radian_cal<=Math.PI*2){
+                radian_cal+=radian_add;
+                x=calX(radian_cal);
+                y=calY(radian_cal);
+                ctx.drawImage(img,x,y,70,90);
+            }else{
+                clearInterval(time);
+                ctx.fillStyle="#eb3b5a";
+                ctx.fill();
+                ctx.clearRect(-500,-200,ctx.width,ctx.height);
+            }
+        }
+        //计算x坐标
+        function calX(p){
+            return 12*16*Math.pow(Math.sin(p),3);
+        }
+        //计算y坐标
+        function calY(q){
+            return -12*(13*Math.cos(q)-5*Math.cos(2*q)-2*Math.cos(3*q)-Math.cos(4*q));
+        }
+        var time=setInterval(draw,10);
+        
+    })
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>velocity动画库</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/velocity.min.js"></script>
+</head>
+<style>
+    body{
+        transform-style: preserve-3d;
+    }
+    #box1 {
+        width: 200px;
+        height: 200px;
+        background-color: rgba(206, 39, 39, 0.425);
+        margin: 200px auto;
+    }
+</style>
+
+<body>
+    <div id="box1"></div>
+</body>
+<script>
+    $(function () {
+        $('#box1').velocity({
+            width: "+=100px",
+            height: "+=100px",
+            translateX:"+=200px",
+            rotateX:"30",
+            rotateY:"180"
+        }, {
+            duration: "1000",
+            easing: "ease-out",
+            delay: "1000",
+        }).velocity(
+            "scroll"
+        ,{duration: "1000",easing:"spring"})
+    })
+</script>
+
+</html>
