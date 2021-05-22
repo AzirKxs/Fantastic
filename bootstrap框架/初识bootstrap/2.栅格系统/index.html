@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>栅格系统</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+</head>
+<!-- 栅格系统 12列系统，6个响应层 -->
+<style>
+    body {
+        background-color: turquoise;
+    }
+
+    .box {
+        /* height: 400px; */
+        background-color: rgb(7, 159, 247);
+        margin: 10px auto;
+        border: 5px solid rgb(0, 0, 0);
+    }
+
+    .text {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .column-style {
+        border: 2px solid white;
+    }
+    .row-style{
+        height: 600px;
+    }
+</style>
+
+<body>
+    <div class="container box">
+        <div class="row">
+            <!-- 默认宽度平均分配 高度会撑满row的高度 -->
+            <div class="col column-style text">第一列</div>
+            <div class="col column-style text">第二列</div>
+        </div>
+        <div class="row row-style">
+            <div class="col-2 column-style text">col-2</div>
+            <div class="col-4 column-style text">col-4</div>
+            <div class="col column-style text">col-6</div>
+        </div>
+        <div class="row">
+            <div class="col column-style text">第一列</div>
+            <div class="col column-style text">第二列</div>
+            <div class="col column-style text">第三列</div>
+            <div class="col column-style text">第四列</div>
+        </div>
+        <div class="row">
+            <div class="col column-style text">第一列</div>
+            <div class="col-auto column-style text">本格根据文字内容确定大小</div>
+            <div class="col column-style text">第三列</div>
+            <div class="col column-style text">第四列</div>
+        </div>
+        <div class="row">
+            <div class="col column-style text">第一列</div>
+            <div class="col-lg-auto column-style text">本格根据文字内容确定大小</div>
+            <div class="col column-style text">第三列</div>
+            <div class="col column-style text">第四列</div>
+        </div>
+
+        <div class="container box">
+            <div class="row">
+                <div class="col-md-8 column-style text">.col-md-8</div>
+                <div class="col-6 col-md-4 column-style text">.col-6 .col-md-4</div>
+            </div>
+            <div class="row">
+                <!-- 没有到达md最小断点时采用 三等分，到达最小断点后采用二等分 -->
+                <div class="col-6 col-md-4 column-style text">.col-6 .col-md-4</div>
+                <div class="col-6 col-md-4 column-style text">.col-6 .col-md-4</div>
+                <div class="col-6 col-md-4 column-style text">.col-6 .col-md-4</div>
+            </div>
+            <div class="row">
+                <div class="col-6 column-style text">.col-6</div>
+                <div class="col-6 column-style text">.col-6</div>
+            </div>
+            <div class="row row-cols-2">
+                <!-- 快速设置每行几列 -->
+                <div class="col column-style text">column</div>
+                <div class="col column-style text">column</div>
+                <div class="col column-style text">column</div>
+                <div class="col column-style text">column</div>
+                <div class="col column-style text">column</div>
+                <div class="col column-style text">column</div>
+                <div class="col column-style text">column</div>
+                <div class="col column-style text">column</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

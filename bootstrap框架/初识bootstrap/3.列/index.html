@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+</head>
+<style>
+     body {
+        background-color: turquoise;
+    }
+
+    .box {
+        background-color: rgb(7, 159, 247);
+        margin: 10px auto;
+        border: 5px solid rgb(0, 0, 0);
+        padding: 20px;
+
+    }
+
+    .text {
+        color: white;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .column-style {
+        border: 2px solid white;
+    }
+    .row-style{
+        height: 210px;
+        border: 5px solid yellow;
+    }
+</style>
+<body>
+    <!-- 列的垂直对齐方式 -->
+    <div class="container box">
+        <!-- 使用列的垂直对齐后高度不会自动撑满row的高度了 -->
+        <!-- align-items作用与于一整列 -->
+        <!-- align-self作用于单列 -->
+        <div class="row row-style align-items-start">
+            <div class="col column-style text">研究列的对齐方式</div>
+            <div class="col column-style text">研究列的对齐方式</div>
+            <div class="col column-style text">研究列的对齐方式</div>
+        </div>
+        <div class="row row-style align-items-center">
+            <div class="col column-style text">研究列的对齐方式</div>
+            <div class="col column-style text">研究列的对齐方式</div>
+            <div class="col column-style text">研究列的对齐方式</div>
+        </div>
+        <div class="row row-style align-items-end">
+            <div class="col column-style text">研究列的对齐方式</div>
+            <div class="col column-style text">研究列的对齐方式</div>
+            <div class="col column-style text">研究列的对齐方式</div>
+        </div>
+        <div class="row row-style">
+            <div class="col column-style text  align-self-start">研究列的对齐方式</div>
+            <div class="col column-style text  align-self-center" >研究列的对齐方式</div>
+            <div class="col column-style text  align-self-end">研究列的对齐方式</div>
+        </div>
+    </div>
+    <!-- 列的水平对齐方式 -->
+    <div class="container box">
+        <div class="row row-style justify-content-start  align-items-start">
+            <div class="col-4 column-style text">研究列的对齐方式</div>
+            <div class="col-4 column-style text">研究列的对齐方式</div>
+        </div>
+        <div class="row row-style justify-content-center  align-items-start">
+            <div class="col-4 column-style text">研究列的对齐方式</div>
+            <div class="col-4 column-style text">研究列的对齐方式</div>
+        </div>
+        <div class="row row-style justify-content-end  align-items-start">
+            <div class="col-4 column-style text">研究列的对齐方式</div>
+            <div class="col-4 column-style text">研究列的对齐方式</div>
+        </div>
+        <div class="row row-style justify-content-around  align-items-start">
+            <div class="col-2 column-style text">研究列的对齐方式around</div>
+            <div class="col-4 column-style text">研究列的对齐方式around</div>
+            <div class="col-2 column-style text">研究列的对齐方式around</div>
+        </div>
+        <div class="row row-style justify-content-between  align-items-start">
+            <div class="col-4 column-style text">研究列的对齐方式between</div>
+            <div class="col-4 column-style text">研究列的对齐方式between</div>
+        </div>
+        <div class="row row-style justify-content-evenly  align-items-start">
+            <div class="col-3 column-style text">研究列的对齐方式evenly</div>
+            <div class="col-3 column-style text">研究列的对齐方式evenly</div>
+        </div>
+        <div class="row row-style ">
+            <div class="col-9 column-style text">研究列的对齐方式溢出col-9</div>
+            <div class="col-6 column-style text">研究列的对齐方式溢出col-6</div>
+        </div>
+    </div>
+    <!-- 列排序 order-->
+    <!-- order-1~order-5 -->
+    <!-- order-first order-last是通过设置为 order--1和order-6来实现的-->
+    <div class="container box">
+        <div class="row row-style align-items-start">
+            <div class="col column-style text order-5">研究列的排序 我是先设置的哦 我的order是5</div>
+            <div class="col column-style text order-1">研究列的排序 我是中间设置的，我的order是1</div>
+            <div class="col column-style text order-3">研究列的排序 我是最后设置的，我的order是3</div>
+        </div>
+    </div>
+    <!-- 偏移列 -->
+    <div class="container box">
+        <div class="row row-style align-items-start">
+            <div class="col-4 column-style text">研究列偏移</div>
+            <div class="col-4 column-style text offset-md-3">研究列偏移</div>
+        </div>
+    </div>
+</body>
+</html>
